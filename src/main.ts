@@ -16,7 +16,6 @@ async function bootstrap() {
     credentials: true,
   });
 
-  // Body parser size limits for Base64 image uploads
   const bodyParser = require('body-parser');
   app.use(bodyParser.json({ limit: '50mb' }));
   app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
