@@ -34,7 +34,7 @@ export async function bootstrapServer() {
       }),
     );
 
-    // Static Uploads
+
     app.useStaticAssets(
       path.join(process.cwd(), 'uploads'),
       {
