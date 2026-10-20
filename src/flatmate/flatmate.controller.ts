@@ -31,14 +31,9 @@ import { uploadToR2 } from '../common/s3.upload';
 export class FlatmateController {
   constructor(
     private readonly flatmateService: FlatmateService,
-  ) {}
+  ) { }
 
-  // ── Helper: safely resolve userId from JWT payload ────────
-  // JWT strategies may store the user id under different keys.
-  // This handles the three common patterns:
-  //   • req.user.id       (NestJS JwtStrategy default)
-  //   • req.user.userId   (custom payload field)
-  //   • req.user.sub      (OAuth/OIDC convention)
+
   private resolveUserId(req: any): number {
     const user = req.user;
 
