@@ -1,6 +1,6 @@
 // prisma/seed-commercial.ts
 // Commercial Property Seed Data (20 Realistic Listings)
-// userId fixed as 2
+
 
 import { PrismaClient } from '@prisma/client';
 
