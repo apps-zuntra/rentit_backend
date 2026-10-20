@@ -20,7 +20,7 @@ import { CommercialService } from "./commercial.service";
 import { JwtAuthGuard } from "../auth/jwt-auth.guard";
 import { CreateCommercialDto } from "./dto/create-commercial.dto";
 import { UpdateCommercialDto } from "./dto/update-commercial.dto";
-import { uploadToR2 } from "src/common/s3.upload";
+import { uploadToR2 } from "../common/s3.upload";
 
 @Controller("commercial")
 export class CommercialController {

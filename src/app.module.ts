@@ -17,8 +17,12 @@ import { UserPreferenceModule } from "./user-preference/user-preference.module";
 import { ApartmentModule } from "./apartment/apartment.module";
 import { CommercialModule } from "./commercial/commercial.module";
 import { FlatmateModule } from './flatmate/flatmate.module';
+import { AppController } from "./app.controller";
+import { AppService } from "./app.service";
 
 @Module({
+  controllers: [AppController],
+  providers: [AppService],
   imports: [
     /// 🔥 ENV CONFIG (VERY IMPORTANT)
     ConfigModule.forRoot({

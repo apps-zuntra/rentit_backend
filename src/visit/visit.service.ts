@@ -5,7 +5,7 @@ import {
 } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
 import { CreateVisitDto } from "./dto/create-visit.dto";
-import { NotificationService } from "src/notification/notification.service";
+import { NotificationService } from "../notification/notification.service";
 
 // Shared shape returned by all property lookups
 interface PropertyAvailability {

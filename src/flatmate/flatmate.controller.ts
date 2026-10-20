@@ -25,7 +25,7 @@ import {
 import { FlatmateService } from './flatmate.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { FlatmateDto } from '../flatmate/dto/create-flatmate.dto';
-import { uploadToR2 } from 'src/common/s3.upload';
+import { uploadToR2 } from '../common/s3.upload';
 
 @Controller('flatmate')
 export class FlatmateController {

@@ -56,19 +56,18 @@ export class SpeechService {
   private readonly client: speech.SpeechClient;
   private readonly projectId: string;
 
-constructor() {
-  this.client = new speech.SpeechClient({
-    keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
-  });
-
-  this.projectId = process.env.GOOGLE_CLOUD_PROJECT_ID!;
-
-  if (!this.projectId) {
-    throw new Error('GOOGLE_CLOUD_PROJECT_ID env variable is required');
+  constructor() {
+    this.projectId = process.env.GOOGLE_CLOUD_PROJECT_ID || '';
+    try {
+      this.client = new speech.SpeechClient(
+        process.env.GOOGLE_APPLICATION_CREDENTIALS
+          ? { keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS }
+          : undefined
+      );
+    } catch (err: any) {
+      this.logger.warn(`SpeechClient init failed: ${err?.message}`);
+    }
   }
-
-  console.log('KEY FILE:', process.env.GOOGLE_APPLICATION_CREDENTIALS);
-}
 
   // ──────────────────────────────────────────
   // 1. TRANSCRIBE AUDIO FILE (REST Upload)

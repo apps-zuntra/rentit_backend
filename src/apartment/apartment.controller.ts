@@ -29,7 +29,7 @@ import { UpdateApartmentDto } from './dto/update-apartment.dto';
 import { AdditionalDetailsDto } from './dto/additional-details.dto';
 import { ApartmentDto } from './dto/apartment.dto';
 
-import { uploadToR2 } from 'src/common/s3.upload';
+import { uploadToR2 } from '../common/s3.upload';
 
 @Controller('apartment')
 export class ApartmentController {

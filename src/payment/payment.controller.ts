@@ -2,7 +2,7 @@
 
 import { Controller, Post, Body, Req, UseGuards } from '@nestjs/common';
 import { RazorpayService } from './razorpay.service';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('payment')
 export class PaymentController {

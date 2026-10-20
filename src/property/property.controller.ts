@@ -31,7 +31,7 @@ import {
   UploadedFile,
 } from '@nestjs/common';
 import { UpdateLocationDto } from './dto/location.dto';
-import { uploadToR2 } from 'src/common/s3.upload';
+import { uploadToR2 } from '../common/s3.upload';
 import { CreateAmenitiesDto } from './dto/create-amenities.dto';
 import { CreateScheduleDto } from './dto/availability.dto';
 import { UpdatePropertyDto } from './dto/update-property.dto';
