@@ -79,11 +79,11 @@ async getChatList(userId: number) {
 
     const otherUser = isSender ? msg.receiver : msg.sender;
 
-    if (!map.has(otherUser.id)) {
+    if (otherUser && !map.has(otherUser.id)) {
       map.set(otherUser.id, {
         ...msg,
         otherUserId: otherUser.id,
-        otherUserName: otherUser.name ?? otherUser.mobile, // 👈 NAME
+        otherUserName: otherUser.name || otherUser.mobile || 'User',
       });
     }
   }
